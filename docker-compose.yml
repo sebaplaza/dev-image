@@ -1,0 +1,9 @@
+services:
+  dev-container:
+    build: .
+    volumes:
+    # map my local dev folder with dev container folder
+      - ../:/home/user/dev
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: zsh
