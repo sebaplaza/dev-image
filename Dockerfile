@@ -27,6 +27,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	man-db \
 	fontconfig \
 	unzip \
+	golang \
 	build-essential
 
 RUN curl -fsSL https://starship.rs/install.sh | bash -s -- -y
@@ -63,8 +64,8 @@ RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 RUN echo '. /usr/share/autojump/autojump.sh' >> ~/.zshrc
 
 # Add zimfw plugins
-RUN echo 'zmodule fzf' >> ~/.zimrc \ 
+RUN echo 'zmodule fzf' >> ~/.zimrc \
 	&& echo 'zmodule archive' >> ~/.zimrc \
-	&& echo 'zmodule exa' >> ~/.zimrc 
+	&& echo 'zmodule exa' >> ~/.zimrc
 
 RUN zsh ~/.zim/zimfw.zsh install
